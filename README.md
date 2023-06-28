@@ -2,7 +2,7 @@
 
 **Reproduce DeFi hack incidents using Foundry.**
 
-218 incidents included.
+232 incidents included.
 
 This repo is only for the educational purpose.
 
@@ -34,13 +34,39 @@ All articles are also published on [Substack](https://defihacklabs.substack.com/
 
 ## List of Past DeFi Incidents
 
-[20230602 NST SimpleSwap](#20230602--nst-simple-swap---unverified-contract-wrong-approval)
+[20230624 SHIDO](#20230624-shido---business-loigc--arbitrage)
+
+[20230623 ShidoGlobal](#20230623-shidoglobal---flashloan-attack)
+
+[20230621 BabyDogeCoin02](#20230621-babydogecoin02---lack-slippage-protection)
+
+[20230621 BUNN](#20230621-bunn---reflection-tokens)
+
+[20230620 MIM](#20230620-mimspell---arbitrary-external-call-vulnerability)
+
+[20230618 ARA](#20230618-ara---incorrect-handling-of-permissions)
+
+[20230615 CFC](#20230615-cfc---uniswap-skim-token-balance-attack)
+
+[20230615 DEPUSDT_LEVUSDC](#20230615-depusdt_levusdc---incorrect-access-control)
+
+[20230611 SellToken04](#20230611-sellToken04---Price-Manipulation)
+
+[20230607 CompounderFinance](#20230607-compounderfinance---manipulation-of-funds-through-fluctuations-in-the-amount-of-exchangeable-assets)
+
+[20230606 VINU](#20230606-vinu---price-manipulation)
+
+[20230606 UN](#20230606-un---price-manipulation)
+
+[20230602 NST SimpleSwap](#20230602-nst-simple-swap---unverified-contract-wrong-approval)
+
+[20230601 Cellframenet](#20230601-cellframenet---calculation-issues-during-liquidity-migration)
 
 [20230531 ERC20TokenBank](#20230531-erc20tokenbank---price-manipulation)
 
 [20230529 Jimbo](#20230529-jimbo---protocol-specific-price-manipulation)
 
-[20230529 BabyDogeCoin](#20230529-babydogecoin---insufficient-input-validation)
+[20230529 BabyDogeCoin](#20230529-babydogecoin---lack-slippage-protection)
 
 [20230529 FAPEN](#20230529-fapen---wrong-balance-check)
 
@@ -77,6 +103,8 @@ All articles are also published on [Substack](https://defihacklabs.substack.com/
 [20230502 Level](#20230502-level---business-logic-flaw)
 
 [20230428 0vix](#20230428-0vix---flashloan-price-manipulation)
+
+[20230427 SiloFinance](#20230427-Silo-finance---Business-Logic-Flaw)
 
 [20230424 Axioma](#20230424-Axioma---business-logic-flaw)
 
@@ -514,7 +542,248 @@ All articles are also published on [Substack](https://defihacklabs.substack.com/
 
 ---
 
-### 20230602  NST Simple Swap - Unverified contract, wrong approval
+### 20230624 Shido - Business Loigc & Arbitrage
+
+### Lost: 997 WBNB
+
+Testing
+
+```
+forge test --contracts ./src/test/SHIDO_exp.sol -vvv
+```
+
+#### Contract
+
+[SHIDO_exp.sol](src/test/SHIDO_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/Phalcon_xyz/status/1672473343734480896
+
+https://twitter.com/AnciliaInc/status/1672382613473083393
+
+---
+
+### 20230623 ShidoGlobal - Flashloan attack
+
+### Lost: ~977BNB
+
+Testing
+
+```
+forge test --contracts ./src/test/ShidoGlobal_exp.sol -vvv
+```
+
+#### Contract
+
+[ShidoGlobal_exp.sol](src/test/ShidoGlobal_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/Phalcon_xyz/status/1672473343734480896
+
+---
+
+### 20230621 BabyDogeCoin02 - Lack Slippage Protection
+
+### Lost: ~ 441 BNB
+
+Testing
+```
+forge test --contracts ./src/test/BabyDogeCoin02_exp.sol -vvv
+```
+
+#### Contract
+
+[BabyDogeCoin02_exp.sol](src/test/BabyDogeCoin02_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/hexagate_/status/1671517819840745475
+
+---
+
+### 20230621 BUNN - Reflection tokens
+
+### Lost: ~52BNB
+
+Testing
+
+```
+forge test --contracts ./src/test/BUNN_exp.sol -vvv
+```
+
+#### Contract
+
+[BUNN_exp.sol](src/test//BUNN_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/DecurityHQ/status/1671803688996806656
+
+---
+
+### 20230620 MIMSpell - Arbitrary External Call Vulnerability
+
+### Lost: ~$17k
+
+Testing
+
+```
+forge test --contracts ./src/test/MIMSpell_exp.sol -vvv
+```
+
+#### Contract
+
+[MIMSpell_exp.sol](src/test/MIMSpell_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/hexagate_/status/1671188024607100928?cxt=HHwWgMC--e2poLEuAAAA
+
+---
+
+### 20230618 ARA - Incorrect handling of permissions
+
+### Lost: ~$125k
+
+Testing
+
+```
+forge test --contracts ./src/test/ARA_exp.sol -vvv
+```
+
+#### Contract
+
+[ARA_exp.sol](src/test/ARA_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/BeosinAlert/status/1670638160550965248
+
+---
+
+### 20230615 CFC - Uniswap Skim() token balance attack
+
+### Lost: ~$16k
+
+Testing
+
+```
+forge test --contracts ./src/test/CFC_exp.sol -vvv
+```
+
+#### Contract
+
+[CFC_exp.sol](src/test/CFC_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/hexagate_/status/1669280632738906113
+
+---
+
+### 20230615 DEPUSDT_LEVUSDC - Incorrect access control
+
+### Lost: ~$105k
+
+Testing
+
+```
+forge test --contracts ./src/test/DEPUSDT_LEVUSDC_exp.sol -vvv
+```
+
+#### Contract
+
+[DEPUSDT_LEVUSDC_exp.sol](src/test/DEPUSDT_LEVUSDC_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/numencyber/status/1669278694744150016?cxt=HHwWgMDS9Z2IvKouAAAA
+
+---
+
+### 20230611 SellToken04 - Price Manipulation
+
+### Lost: ~$109k
+
+Testing
+
+```
+forge test --contracts ./src/test/SELLC03_exp.sol -vvv
+```
+
+#### Contract
+
+[SELLC03_exp.sol](src/test/SELLC03_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/EoceneSecurity/status/1668468933723328513
+
+---
+
+### 20230607 CompounderFinance - Manipulation of funds through fluctuations in the amount of exchangeable assets
+
+### Lost: ~$27,174k
+
+Testing
+
+```
+forge test --contracts ./src/test/CompounderFinance_exp.sol -vvv
+```
+
+#### Contract
+
+[CompounderFinance_exp.sol](src/test/CompounderFinance_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/numencyber/status/1666346419702362112
+
+---
+
+### 20230606 VINU - Price Manipulation
+
+### Lost: ~$6k
+
+Testing
+
+```
+forge test --contracts ./src/test/VINU_exp.sol -vvv
+```
+
+#### Contract
+
+[VINU_exp.sol](src/test/VINU_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/hexagate_/status/1666051854386511873?cxt=HHwWgoC24bPVgJ8uAAAA
+
+---
+
+### 20230606 UN - Price Manipulation
+
+### Lost: ~$26k
+
+Testing
+
+```
+forge test --contracts ./src/test/UN_exp.sol -vvv
+```
+
+#### Contract
+
+[UN_exp.sol](src/test/UN_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/MetaTrustAlert/status/1667041877428932608
+
+---
+
+### 20230602 NST Simple Swap - Unverified contract, wrong approval
 
 ### Lost: $40k
 
@@ -531,6 +800,28 @@ forge test --contracts ./src/test/NST_exp.sol -vvv
 #### Link reference
 
 https://discord.com/channels/1100129537603407972/1100129538056396870/1114142216923926528
+
+---
+
+### 20230601 Cellframenet - Calculation issues during liquidity migration
+
+### Lost: ~$76k
+
+Testing
+
+```
+forge test --contracts ./src/test/Cellframe_exp.sol -vvv
+```
+
+#### Contract
+
+[Cellframe_exp.sol](src/test/Cellframe_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/numencyber/status/1664132985883615235?cxt=HHwWhoDTqceImJguAAAA
+
+---
 
 ### 20230531 ERC20TokenBank - Price Manipulation
 
@@ -574,7 +865,7 @@ https://twitter.com/yicunhui2/status/1663793958781353985
 
 ---
 
-### 20230529 BabyDogeCoin - Insufficient Input Validation
+### 20230529 BabyDogeCoin - Lack Slippage Protection
 
 ### Lost: ~$135k
 
@@ -966,6 +1257,26 @@ https://twitter.com/Mudit__Gupta/status/1651958883634536448
 
 ---
 
+### 20230427 Silo finance - Business Logic Flaw
+
+### Lost: None
+
+Testing
+
+```
+forge test --contracts ./src/test/silo_finance.t.sol -vvv
+```
+
+#### Contract
+
+[silo_finance.t.sol](src/test/silo_finance.t.sol)
+
+#### Link Reference
+
+https://medium.com/immunefi/silo-finance-logic-error-bugfix-review-35de29bd934a
+
+---
+
 ### 20230424 Axioma - Business Logic Flaw
 
 ### Lost: ~21 WBNB
@@ -1064,7 +1375,7 @@ forge test --contracts ./src/test/YearnFinance_exp.sol -vvv
 
 #### Contract
 
-[YearnFinance_exp.sol](/src/test/YearnFinance_exp.sol)
+[YearnFinance_exp.sol](src/test/YearnFinance_exp.sol)
 
 #### Link Reference
 
@@ -1141,6 +1452,8 @@ https://twitter.com/peckshield/status/1644907207530774530
 https://twitter.com/SlowMist_Team/status/1644936375924584449
 
 https://twitter.com/AnciliaInc/status/1644925421006520320
+
+---
 
 ### 20230405 Sentiment - Read-Only-Reentrancy
 
@@ -1770,6 +2083,8 @@ forge test --contracts ./src/test/ThoreumFinance_exp.sol -vvv
 
 https://bscscan.com/tx/0x3fe3a1883f0ae263a260f7d3e9b462468f4f83c2c88bb89d1dee5d7d24262b51
 https://twitter.com/AnciliaInc/status/1615944396134043648
+
+---
 
 ### 20230118 - UPSToken - business logic flaw
 
@@ -3903,6 +4218,8 @@ https://medium.com/immunefi/hack-analysis-saddle-finance-april-2022-f2bcb119f38
 
 https://github.com/Hephyrius/Immuni-Saddle-POC
 
+---
+
 ### 20220430 Rari Capital/Fei Protocol - Flashloan Attack + Reentrancy
 
 #### Lost: $80 million
@@ -5359,7 +5676,7 @@ https://etherscan.io/address/0xc5d105e63711398af9bbff092d4b6769c82f793d#code
 
 ---
 
-### 20171106 Parity - 'Accidentally Killed It'
+### 20171106 Parity - Accidentally Killed It
 
 #### Lost: 514k ETH
 
