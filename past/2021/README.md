@@ -2,6 +2,8 @@
 
 ## Before 2021 - List of Past DeFi Incidents
 
+39 incidents included.
+
 [20211221 Visor Finance](#20211221-visor-finance---reentrancy)
 
 [20211218 Grim Finance](#20211218-grim-finance---flashloan--reentrancy)
@@ -40,6 +42,8 @@
 
 [20210628 SafeDollar](#20210628-safedollar---deflationary-token-uncompatible)
 
+[20210625 xWin Finance](#20210625-xwin-finance---subscription-incentive-mechanism)
+
 [20210622 Eleven Finance](#20210622-eleven-finance---doesnt-burn-shares)
 
 [20210607 88mph NFT](#20210607-88mph-nft---access-control)
@@ -50,17 +54,19 @@
 
 [20210519 PancakeBunny](#20210519-pancakebunny---price-oracle-manipulation)
 
-[20210125 Sushi Badger Digg](#20210125-sushi-badger-digg---sandwich-attack)
- 
 [20210508 Rari Capital](#20210509-raricapital---cross-contract-reentrancy)
 
 [20210508 Value Defi](#20210508-value-defi---cross-contract-reentrancy)
+
+[20210502 Spartan](#20210502-spartan---logic-flaw)
 
 [20210428 Uranium](#20210428-uranium---miscalculation)
 
 [20210308 DODO](#20210308-dodo---flashloan-attack)
 
 [20210305 Paid Network](#20210305-paid-network---private-key-compromised)
+
+[20210125 Sushi Badger Digg](#20210125-sushi-badger-digg---sandwich-attack)
 
 [20201229 Cover Protocol](#20201229-cover-protocol)
 
@@ -500,6 +506,26 @@ https://twitter.com/peckshield/status/1409443556251430918
 
 ---
 
+### 20210625 xWin Finance - subscription-incentive-mechanism
+
+### Lost: ~$300k
+
+Testing
+
+```sh
+forge test --contracts src/test/xWin_exp.sol -vvv
+```
+
+#### Contract
+
+[xWin_exp.sol](src/test/xWin_exp.sol)
+
+#### Link reference
+
+https://peckshield.medium.com/xwin-finance-incident-root-cause-analysis-71d0820e6bc1
+
+---
+
 ### 20210622 Eleven Finance - Doesn’t burn shares
 
 Testing
@@ -632,6 +658,26 @@ forge test --contracts ./src/test/ValueDefi_exp.sol -vv
 https://rekt.news/rari-capital-rekt/
 
 https://bscscan.com/tx/0xa00def91954ba9f1a1320ef582420d41ca886d417d996362bf3ac3fe2bfb9006
+
+---
+
+### 20210502 Spartan - Logic Flaw
+
+#### Lost: $30.5M
+
+Testing
+
+```sh
+forge test --contracts src/test/Spartan_exp.t.sol -vv
+```
+
+#### Contract
+
+[Spartan_exp.t.sol](src/test/Spartan_exp.t.sol)
+
+#### Link reference
+
+https://rekt.news/spartan-rekt/
 
 ---
 
