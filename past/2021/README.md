@@ -2,7 +2,7 @@
 
 ## Before 2021 - List of Past DeFi Incidents
 
-39 incidents included.
+40 incidents included.
 
 [20211221 Visor Finance](#20211221-visor-finance---reentrancy)
 
@@ -65,7 +65,7 @@
 [20210308 DODO](#20210308-dodo---flashloan-attack)
 
 [20210305 Paid Network](#20210305-paid-network---private-key-compromised)
-
+[20210204 Yearn YDai](#20210204-yearn-ydai---Slippage-proection-absent)
 [20210125 Sushi Badger Digg](#20210125-sushi-badger-digg---sandwich-attack)
 
 [20201229 Cover Protocol](#20201229-cover-protocol)
@@ -77,6 +77,8 @@
 [20200804 Opyn Protocol](#20200804-opyn-protocol---msgValue-in-loop)
 
 [20200618 Bancor Protocol](#20200618-bancor-protocol---access-control)
+
+[20200418 UniSwapV1](#20200418-uniswapv1---erc777-reentrancy)
 
 [20180422 Beauty Chain](#20180422-beauty-chain---integer-overflow)
 
@@ -142,7 +144,7 @@ forge test --contracts ./src/test/NerveBridge.t.sol -vv
 
 #### Contract
 
-[NerveBridge.t.sol](src/test/NerveBridge.t.sol)
+[NerveBridge.t.sol](../../src/test/NerveBridge.t.sol)
 
 #### Link reference
 
@@ -518,7 +520,7 @@ forge test --contracts src/test/xWin_exp.sol -vvv
 
 #### Contract
 
-[xWin_exp.sol](src/test/xWin_exp.sol)
+[xWin_exp.sol](../../src/test/xWin_exp.sol)
 
 #### Link reference
 
@@ -594,7 +596,7 @@ forge test --contracts src/test/BurgerSwap_exp.sol -vv
 
 #### Contract
 
-[BurgerSwap_exp.sol](src/test/BurgerSwap_exp.sol)
+[BurgerSwap_exp.sol](../../src/test/BurgerSwap_exp.sol)
 
 #### Link reference
 https://twitter.com/Mudit__Gupta/status/1398156036574306304
@@ -673,7 +675,7 @@ forge test --contracts src/test/Spartan_exp.t.sol -vv
 
 #### Contract
 
-[Spartan_exp.t.sol](src/test/Spartan_exp.t.sol)
+[Spartan_exp.t.sol](../../src/test/Spartan_exp.t.sol)
 
 #### Link reference
 
@@ -746,6 +748,29 @@ forge test --contracts ./src/test/PAID_exp.sol -vv
 https://paidnetwork.medium.com/paid-network-attack-postmortem-march-7-2021-9e4c0fef0e07
 
 https://etherscan.io/tx/0x4bb10927ea7afc2336033574b74ebd6f73ef35ac0db1bb96229627c9d77555a0
+
+---
+
+
+### 20210204 Yearn YDai - Slippage proection absent
+
+#### Lost: 11 Million $
+
+Testing
+
+```sh
+forge test --contracts ./src/test/Yearn_ydai.sol -vv
+```
+
+#### Contract
+
+[Yearn_ydai.sol](../../src/test/Yearn_ydai.sol)
+
+#### Link reference
+
+https://github.com/yearn/yearn-security/blob/master/disclosures/2021-02-04.md
+
+https://etherscan.io/tx/0x59faab5a1911618064f1ffa1e4649d85c99cfd9f0d64dcebbc1af7d7630da98b
 
 ---
 
@@ -869,6 +894,26 @@ forge test --contracts ./src/test/Bancor_exp.sol -vv
 https://blog.bancor.network/bancors-response-to-today-s-smart-contract-vulnerability-dc888c589fe4
 
 https://etherscan.io/address/0x5f58058c0ec971492166763c8c22632b583f667f
+
+---
+
+### 20200418 UniSwapV1 - ERC777 Reentrancy
+
+#### Lost: $220,000
+
+Testing
+
+```sh
+forge test --contracts ./src/test/uniswap-erc777.sol -vv
+```
+
+#### Contract
+
+[uniswap-erc777.sol](../../src/test/uniswap-erc777.sol)
+
+#### Link reference
+
+https://blog.blockmagnates.com/detailed-explanation-of-uniswaps-erc777-re-entry-risk-8fa5b3738e08
 
 ---
 

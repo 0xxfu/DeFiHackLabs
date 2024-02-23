@@ -82,7 +82,7 @@
 
 [20221020 HEALTH Token](#20221020-health---transfer-logic-flaw)
 
-[20221020 BEGO Token](#20221020-bego---incorrect-signature-verification)
+[20221019 BEGO Token](#20221019-bego---incorrect-signature-verification)
 
 [20221018 HPAY](#20221018-hpay---access-control)
 
@@ -154,7 +154,7 @@
 
 [20220725 LPC](#20220725-lpc---business-logic-flaw--incorrect-recipient-balance-check-did-not-check-senderrecipient-in-transfer)
 
-[20220713 Audius](#20220723-audius---storage-collision--malicious-proposal)
+[20220723 Audius](#20220723-audius---storage-collision--malicious-proposal)
 
 [20220713 SpaceGodzilla](#20220713-spacegodzilla---flashloans--price-manipulation)
 
@@ -224,6 +224,9 @@
 
 [20220320 Umbrella Network](#20220320-umbrella-network---underflow)
 
+[20220315 Agave Finance](#20220313-agave-finance---erc667-reentrancy)
+
+
 [20220315 Hundred Finance](#20220313-hundred-finance---erc667-reentrancy)
 
 [20220313 Paraluni](#20220313-paraluni---flashloan--reentrancy)
@@ -238,7 +241,9 @@
 
 [20220208 Sandbox LAND](#20220208-sandbox-land---access-control)
 
-[20220206 Meter](#20220206-Meter---bridge)
+[20220205 Meter](#20220205-Meter---bridge)
+
+[20220204 TecraSpace](#20220204-TecraSpace---Any-token-is-destroyed)
 
 [20220128 Qubit Finance](#20220128-qubit-finance---bridge-address0safetransferfrom-does-not-revert)
 
@@ -267,7 +272,7 @@ https://twitter.com/CertiKAlert/status/1608788290785665024
 
 ### 20221229 - JAY - Insufficient validation + Reentrancy
 
-### Lost: $15.32 ETH
+### Lost: ~15.32 ETH
 
 Testing
 
@@ -748,12 +753,12 @@ https://twitter.com/CertiKAlert/status/1593094922160128000
 Testing
 
 ```sh
-forge test --contracts ./src/test/SheepFram_exp.sol -vvv
+forge test --contracts ./src/test/SheepFarm_exp.sol -vvv
 ```
 
 #### Contract
 
-[SheepFarm_exp.sol](../../src/test/SheepFram_exp.sol)
+[SheepFarm_exp.sol](../../src/test/SheepFarm_exp.sol)
 
 #### Link reference
 
@@ -1065,7 +1070,7 @@ https://twitter.com/BlockSecTeam/status/1583073442433495040
 
 ---
 
-### 20221020 BEGO - Incorrect signature verification
+### 20221019 BEGO - Incorrect signature verification
 
 ### Lost 12 BNB
 
@@ -1193,7 +1198,7 @@ https://twitter.com/danielvf/status/1580936010556661761
 
 ### 20221014 MEVBOTa47b - MEVBOT a47b
 
-### Lost: $241 k
+### Lost: ~187.75 WETH
 
 Testing
 
@@ -1217,7 +1222,7 @@ https://etherscan.io/tx/0x35ecf595864400696853c53edf3e3d60096639b6071cadea6076c9
 
 ### 20221012 ATK - FlashLoan manipulate price
 
-### Lost: $127 k
+### Lost: ~127K BUSD
 
 Testing
 
@@ -1283,6 +1288,8 @@ https://etherscan.io/tx/0x8c3f442fc6d640a6ff3ea0b12be64f1d4609ea94edd2966f42c01c
 
 ### 20221010 Carrot - Public functionCall
 
+### Lost: 31,318 BUSDT
+
 Testing
 
 ```sh
@@ -1302,6 +1309,8 @@ https://bscscan.com/tx/0xa624660c29ee97f3f4ebd36232d8199e7c97533c9db711fa4027994
 ---
 
 ### 20221009 Xave Finance - Malicious Proposal Mint & Transfer Ownership
+
+### Lost: 100,000,000,000,000 RNBW
 
 Testing
 
@@ -1343,6 +1352,8 @@ https://bscscan.com/tx/0xe59fa48212c4ee716c03e648e04f0ca390f4a4fc921a890fded0e01
 ---
 
 ### 20221002 Transit Swap - Incorrect owner address validation
+
+### Lost: over $21 Million
 
 Testing
 
@@ -1442,30 +1453,6 @@ https://bscscan.com/tx/0xa13c8c7a0c97093dba3096c88044273c29cebeee109e23622cd412d
 
 ---
 
-### 20220910 DPC - Incorrect Reward calculation
-
-#### Lost: $103,755
-
-Testing
-
-```sh
-forge test --contracts ./src/test/DPC_exp.sol -vvv
-```
-
-#### Contract
-
-[DPC_exp.sol](../../src/test/DPC_exp.sol)
-
-#### Link reference
-
-https://twitter.com/BeosinAlert/status/1568429355919089664
-
-https://bscscan.com/address/0x2109bbecB0a563e204985524Dd3DB2F6254AB419
-
-https://learnblockchain.cn/article/4733
-
----
-
 ### 20220928 MEVBOT - Badc0de
 
 ### Lost: $1,469,700
@@ -1536,7 +1523,31 @@ https://bscscan.com/tx/0xd48758ef48d113b78a09f7b8c7cd663ad79e9965852e872fdfc9223
 
 ---
 
-### 20220909 YYDS - pair manipulate
+### 20220909 DPC - Incorrect Reward calculation
+
+#### Lost: $103,755
+
+Testing
+
+```sh
+forge test --contracts ./src/test/DPC_exp.sol -vvv
+```
+
+#### Contract
+
+[DPC_exp.sol](../../src/test/DPC_exp.sol)
+
+#### Link reference
+
+https://twitter.com/BeosinAlert/status/1568429355919089664
+
+https://bscscan.com/address/0x2109bbecB0a563e204985524Dd3DB2F6254AB419
+
+https://learnblockchain.cn/article/4733
+
+---
+
+### 20220908 YYDS - pair manipulate
 
 #### Lost: 742,286.27 BUSD
 
@@ -2277,6 +2288,28 @@ https://etherscan.io/tx/0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d
 
 ---
 
+### 20220428 DEUS DAO - Flashloan & Price Oracle Manipulation
+
+#### Lost: $13 million
+
+Testing
+
+```sh
+forge test --contracts ./src/test/deus_exp.sol -vv
+```
+
+#### Contract
+
+[deus_exp.sol](../../src/test/deus_exp.sol)
+
+#### Link reference
+
+https://twitter.com/peckshield/status/1519531866109317121
+
+https://ftmscan.com/tx/0xe374495036fac18aa5b1a497a17e70f256c4d3d416dd1408c026f3f5c70a3a9c
+
+---
+
 ### 20220424 Wiener DOGE - Flashloan
 
 #### Lost: 78 BNB
@@ -2302,27 +2335,6 @@ https://bscscan.com/tx/0x4f2005e3815c15d1a9abd8588dd1464769a00414a6b7adcbfd75a53
 
 ---
 
-### 20220428 DEUS DAO - Flashloan & Price Oracle Manipulation
-
-#### Lost: $13 million
-
-Testing
-
-```sh
-forge test --contracts ./src/test/deus_exp.sol -vv
-```
-
-#### Contract
-
-[deus_exp.sol](../../src/test/deus_exp.sol)
-
-#### Link reference
-
-https://twitter.com/peckshield/status/1519531866109317121
-
-https://ftmscan.com/tx/0xe374495036fac18aa5b1a497a17e70f256c4d3d416dd1408c026f3f5c70a3a9c
-
----
 
 ### 20220423 Akutar NFT - Denial of Service
 
@@ -2691,7 +2703,26 @@ https://medium.com/immunefi/a-poc-of-the-hundred-finance-heist-4121f23a098
 https://gnosisscan.io/tx/0x534b84f657883ddc1b66a314e8b392feb35024afdec61dfe8e7c510cfac1a098
 
 ---
+### 20220313 Agave Finance - ERC667 Reentrancy
 
+#### Lost: $1.5 million
+
+Testing
+
+```sh
+forge test --contracts ./src/test/Agave_exp.sol -vv
+```
+
+#### Contract
+
+[Agave_exp.sol](../../src/test/Agave_exp.sol)
+
+#### Link reference
+
+https://medium.com/agavefinance/agave-exploit-reentrancy-in-liquidation-call-51ae407bc56
+https://gnosisscan.io/tx/0xa262141abcf7c127b88b4042aee8bf601f4f3372c9471dbd75cb54e76524f18e
+
+---
 ### 20220313 Paraluni - Flashloan & Reentrancy
 
 #### Lost: $1.7 million
@@ -2834,7 +2865,7 @@ https://etherscan.io/tx/0x34516ee081c221d8576939f68aee71e002dd5557180d45194209d6
 
 ---
 
-### 20220206 Meter - Bridge
+### 20220205 Meter - Bridge
 
 #### Lost: $4.3 million
 
@@ -2857,6 +2888,28 @@ https://blog.chainsafe.io/breaking-down-the-meter-io-hack-a46a389e7ae4
 
 this does not seem to be the correct transaction though:
 https://moonriver.moonscan.io/tx/0x5a87c24d0665c8f67958099d1ad22e39a03aa08d47d00b7276b8d42294ee0591
+
+---
+
+### 20220204 TecraSpace - Any token is destroyed
+
+#### Lost: ~63k $USDT 
+
+Testing
+
+```sh
+forge test --contracts ./src/test/TecraSpace_exp.sol -vv
+```
+
+#### Contract
+
+[TecraSpace_exp.sol](../../src/test/TecraSpace_exp.sol)
+
+#### Link reference
+
+https://etherscan.io/address/0x6653d9bcbc28fc5a2f5fb5650af8f2b2e1695a15
+
+https://phalcon.blocksec.com/explorer/tx/eth/0x81e9918e248d14d78ff7b697355fd9f456c6d7881486ed14fdfb69db16631154
 
 ---
 
